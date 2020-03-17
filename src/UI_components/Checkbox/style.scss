@@ -1,0 +1,150 @@
+// Customize the label (the container)
+.c-checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.5em;
+  font-size: 1em;
+  line-height: 1em;
+  user-select: none;
+}
+
+// Hide the browser's default checkbox
+.c-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+// Create a custom checkbox
+.c-checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 1.2em;
+  width: 1.2em;
+  background-color: #fff;
+  border: 1px solid #e1e1e1 {
+    radius: 2px;
+  }
+}
+
+// On mouse-over, add a grey background color
+.c-checkbox:hover input ~ .c-checkbox-checkmark {
+  background-color: #fff;
+}
+
+// When the checkbox is checked, add a blue background
+.c-checkbox input:checked ~ .c-checkbox-checkmark {
+  background-color: #fff;
+}
+
+// Create the checkmark/indicator (hidden when not checked)
+.c-checkbox-checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+// Show the checkmark when checked
+.c-checkbox input:checked ~ .c-checkbox-checkmark::after {
+  display: block;
+}
+
+// Style the checkmark/indicator
+.c-checkbox .c-checkbox-checkmark::after {
+  left: 0.375em;
+  top: 1px;
+  width: 0.375em;
+  height: 0.75em;
+  border: solid #43425d;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+// Animate the error sign
+label.c-checkbox-error {
+  animation: vibrate 1s ease 0s 1;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(0%);
+    background: transparent;
+  }
+  20% {
+    transform: translateX(-5%);
+    background: lightpink;
+  }
+  40% {
+    transform: translateX(5%);
+    background: transparent;
+  }
+  60% {
+    transform: translateX(-5%);
+    background: lightpink;
+  }
+  80% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+// For CSSTransition
+.flip-checkbox-enter {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(40%);
+}
+
+.flip-checkbox-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms;
+}
+
+.flip-checkbox-exit {
+  position: absolute;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flip-checkbox-exit-active {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-40%);
+  transition: all 500ms;
+}
+
+// For responsive views
+@media only screen and (max-width: 768px) {
+  .flip-checkbox-enter {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+
+  .flip-checkbox-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms;
+  }
+
+  .flip-checkbox-exit {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  .flip-checkbox-exit-active {
+    opacity: 0;
+    transform: translateY(-40%);
+    transition: all 500ms;
+  }
+}

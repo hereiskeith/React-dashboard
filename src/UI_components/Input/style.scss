@@ -1,0 +1,139 @@
+// Define some variables for further use
+$inputFontSize: 1em;
+$inputPadding: 0.375em;
+
+// Style the customized input wrapper
+.c-input-wrapper {
+  position: relative;
+  width: 45%;
+
+  &-full-length {
+    width: 100%;
+  }
+}
+
+// Style the customized input
+.c-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #e1e1e1;
+  margin-top: 1.5em;
+  padding: $inputPadding {
+    left: 0.25em;
+  };
+  font-size: $inputFontSize;
+
+  &:focus {
+    border: 0;
+    border-bottom: 1px solid #43425d;
+    outline: none;
+  }
+}
+
+// Style the error symbol and error text
+.c-error-symbol {
+  position: absolute;
+  right: 0;
+  bottom: $inputPadding;
+  text-align: center;
+  color: red;
+  font-size: $inputFontSize * 1.2;
+  font-weight: 700;
+  animation: vibrateForInputError 1s ease 0s 1;
+
+  // When symbol is hovered, show error text
+  span:hover {
+    cursor: pointer;
+    &+div.c-error-text {
+      display: block;
+    }
+  }
+
+  // Style the error text
+  div {
+    position: absolute;
+    top: 12px;
+    left: -64px;
+    display: none;
+    width: 12em;
+    padding: 0.375em;
+    border: 1px solid silver;
+    border-radius: 0.125em;
+    background: lightgoldenrodyellow;
+    color: black;
+    text-align: left;
+    font-size: $inputFontSize * 0.75;
+    font-weight: 300;
+    z-index: 10;
+  }
+}
+
+@keyframes vibrateForInputError {
+  0% {transform: translateX(0%);}
+  20% {transform: translateX(-40%);}
+  40% {transform: translateX(40%);}
+  60% {transform: translateX(-40%);}
+  80% {transform: translateX(40%);}
+  100% {transform: translateX(0%);}
+}
+
+// For CSSTransition
+.flip-input-enter {
+  opacity: 0;
+  transform: translateX(40%);
+}
+
+.flip-input-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms;
+}
+
+.flip-input-exit {
+  position: absolute;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flip-input-exit-active {
+  opacity: 0;
+  transform: translateX(-40%);
+  transition: all 500ms;
+}
+
+// For responsive views
+@media only screen and (max-width: 850px) {
+  .c-input {
+    border-bottom: 1px solid #000;
+  }
+  .flip-input-enter {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+
+  .flip-input-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms;
+  }
+
+  .flip-input-exit {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  .flip-input-exit-active {
+    opacity: 0;
+    transform: translateY(-40%);
+    transition: all 500ms;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .c-error-symbol {
+    div {
+      width: 10em;
+    }
+  }
+}

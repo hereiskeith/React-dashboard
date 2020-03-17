@@ -1,0 +1,108 @@
+// Style the profile using CSS Flexbox
+.profile-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(100% - 15vw);
+  height: 60px;
+  padding-right: 1em;
+  box-shadow: 0px 2px 3px #DDD;
+  background: white;
+  z-index: 1000;
+  transition: width 0.2s ease;
+
+  // The width of minimized menu is 50px
+  &-expand {
+    width: calc(100% - 50px);
+  }
+
+  .profile-menu-icon {
+    display: none;
+  }
+
+  .profile-name {
+    margin: {
+      left:1em;
+      right: 1em;
+    };
+    overflow: hidden;
+    font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}
+
+.profile-title {
+  display: none;
+
+  &-minimized {
+    display: block;
+    margin-left: 1em;
+    margin-right: auto;
+  }
+}
+
+.profile-icon {
+  flex-shrink: 0;
+  margin: {
+    left: 0.75em;
+    right: 0.75em;
+  };
+
+  &:nth-of-type(2) {
+    margin-left: 2em;
+  }
+
+  &:last-of-type {
+    margin-right: 1em;
+  }
+}
+
+.profile-vertical-divider {
+  flex-shrink: 0;
+  width: 1px;
+  height: 30px;
+  background: radial-gradient(circle at center, #BCBCCB 0, transparent 100%);
+}
+
+@media only screen and (max-width: 1066px) {
+  .profile-wrapper {
+    width: calc(100% - 160px);
+
+    &-expand {
+      width: calc(100% - 50px);
+    }
+  }
+}
+
+// Switch to mobile view
+@media only screen and (max-width: 600px) {
+  .profile-wrapper {
+    width: 100%;
+
+    .profile-menu-icon {
+      flex-shrink: 0;
+      display: block;
+      margin-left: 8px;
+      margin-right: auto;
+    }
+  }
+
+  .profile-title {
+    display: none;
+
+    &-minimized {
+      display: none;
+    }
+  }
+}

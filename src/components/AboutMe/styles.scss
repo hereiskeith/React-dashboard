@@ -1,0 +1,153 @@
+.about-me-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 100px auto;
+  grid-template-areas:
+          "aboutMeTitle"
+          "."
+          "informationWrapper";
+  min-height: calc(100vh - 60px);
+  grid-gap: 0.5em 2em;
+  padding: 1.5em {
+    left: 3em;
+    right: 3em;
+  };
+  background: #F2F2F9;
+}
+
+.about-me-title {
+  grid-area: aboutMeTitle;
+  color: #666;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.information-wrapper {
+  grid-area: informationWrapper;
+  justify-self: center;
+  align-self: start;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+          "aboutMeName aboutMeNameKeith"
+          "aboutMeEmail aboutMeEmailKeith"
+          "aboutMePhone aboutMePhoneKeith"
+          "aboutMeNote aboutMeNoteKeith"
+          "aboutMeResume aboutMeResumeKeith";
+  grid-gap: 1em 2em;
+  font-weight: 600;
+}
+
+@mixin information-label-font-style {
+  justify-self: flex-end;
+  align-self: flex-start;
+  color: #666;
+  font-size: 1.3em;
+}
+
+@mixin information-font-style {
+  justify-self: flex-start;
+  align-self: flex-end;
+  color: #666;
+  font-size: 1.3em;
+}
+
+@function gridArea($name) {
+  @return aboutMe#{$name}
+}
+
+.about-me-name {
+  grid-area: gridArea(Name);
+  @include information-label-font-style;
+}
+
+.about-me-email {
+  grid-area: gridArea(Email);
+  @include information-label-font-style;
+}
+
+.about-me-phone {
+  grid-area: gridArea(Phone);
+  @include information-label-font-style;
+}
+
+.about-me-note {
+  grid-area: gridArea(Note);
+  @include information-label-font-style;
+}
+
+.about-me-resume {
+  grid-area: gridArea(Resume);
+  @include information-label-font-style;
+}
+
+.about-me-name-keith {
+  grid-area: gridArea(NameKeith);
+  @include information-font-style;
+}
+
+.about-me-email-keith {
+  grid-area: gridArea(EmailKeith);
+  @include information-font-style;
+}
+
+.about-me-phone-keith {
+  grid-area: gridArea(PhoneKeith);
+  @include information-font-style;
+}
+
+.about-me-note-keith {
+  grid-area: gridArea(NoteKeith);
+  @include information-font-style;
+}
+
+.about-me-resume-keith {
+  grid-area: gridArea(ResumeKeith);
+  @include information-font-style;
+  text-decoration: underline;
+}
+
+
+// Switch to mobile view
+@media only screen and (max-width: 600px) {
+  .about-me-wrapper {
+    grid-template-rows: 30px 50px auto;
+    padding: 1em {
+      top: 3em;
+    };
+  }
+
+  .information-wrapper {
+    font-weight: 400;
+  }
+
+  .about-me-title {
+    grid-area: aboutMeTitle;
+    align-self: center;
+    color: #666;
+    font-size: 2.5em;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .about-me-name {
+    font-size: 1.75em;
+  }
+
+  .about-me-email {
+    font-size: 1.75em;
+  }
+
+  .about-me-phone {
+    font-size: 1.75em;
+  }
+
+  .about-me-note {
+    font-size: 1.75em;
+  }
+
+  .about-me-resume {
+    font-size: 1.75em;
+  }
+}

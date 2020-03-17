@@ -1,0 +1,44 @@
+.external-wrapper {
+  background: #F2F2F9;
+}
+
+.section-wrapper {
+  // The height of profile
+  margin-top: 60px;
+  // The width of menu
+  margin-left: 15vw;
+  margin-right: 0;
+  transition: all 0.2s ease;
+  // When menu is minimized
+  &-expand {
+    // The width of minimized menu is set as 50px
+    // The padding of the dashboard component is 1.5em
+    // Half of the 15vw is allocated to both margin-left and right
+    margin-left: calc(7.5vw - 1.5em + 50px);
+    margin-right: calc(7.5vw - 1.5em);
+  }
+}
+
+@media only screen and (max-width: 1066px) {
+  // The minimum width of menu is set as 160px
+  .section-wrapper {
+    margin-left: 160px;
+    &-expand {
+      // The width of minimized menu is set as 50px
+      // The padding of the dashboard component is 1.5em
+      // Half of the 160px is allocated to both margin-left and right
+      margin-left: calc(80px - 1.5em + 50px);
+      margin-right: calc(80px - 1.5em);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .section-wrapper {
+    margin-left: 0;
+    &-expand {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

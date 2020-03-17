@@ -1,0 +1,79 @@
+// Style the customized button component
+.c-button {
+  border: 1px solid #43425d {
+    radius: 2px;
+  }
+  padding: 0.5em;
+  min-width: 100px;
+  width: 40%;
+  font-size: 1em;
+  text-align: center;
+
+  &-contained {
+    color: #fff;
+    background: #43425d;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// For CSSTransition
+.flip-button-enter {
+  opacity: 0;
+  transform: translateX(40%);
+}
+
+.flip-button-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms;
+}
+
+.flip-button-exit {
+  position: absolute;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flip-button-exit-active {
+  opacity: 0;
+  transform: translateX(-40%);
+  transition: all 500ms;
+}
+
+// For responsive views
+@media only screen and (max-width: 768px) {
+  .flip-button-enter {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+
+  .flip-button-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms;
+  }
+
+  .flip-button-exit {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  .flip-button-exit-active {
+    opacity: 0;
+    transform: translateY(-40%);
+    transition: all 500ms;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .c-button {
+    min-width: 10em;
+    padding: 0.675em;
+    margin-bottom: 0.5em;
+  }
+}
+

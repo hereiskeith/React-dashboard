@@ -1,0 +1,145 @@
+// Style the menu using CSS Flexbox
+.menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 15vw;
+  background: #43425D;
+  transition: all 0.2s ease;
+  // Minimized menu in laptop view
+  &-minimized {
+    width: 50px;
+
+    .menu-title {
+      justify-content: center;
+    }
+
+    svg.menu-title-icon {
+      margin-left: unset;
+    }
+  }
+}
+
+// Style title part of the menu using CSS Flexbox
+.menu-title {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: {
+    left: 8px;
+    right: 8px;
+  };
+  color: white;
+  background: #3C3B53;
+
+  h4 {
+    flex-grow: 1;
+    white-space: nowrap;
+  }
+
+  .menu-title-icon {
+    margin-left: auto;
+    cursor: pointer;
+  }
+}
+
+// Style each selection of the menu using CSS Flexbox
+.menu-page {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 0;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: {
+    right: 8px;
+  };
+  color: #9998B3;
+  background: #43425D;
+  cursor: default;
+
+  &-focus {
+    background: #3C3B54;
+  }
+
+  h5 {
+    flex-grow: 1;
+    color: #9998B3;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .menu-thick-line {
+    width:3px;
+    height: 50px;
+    background: transparent;
+
+    &-focus {
+      background: #A3A0FB;
+    }
+  }
+
+  .menu-page-icon {
+    margin-left: 12px;
+  }
+}
+
+.title-text-minimized {
+  display: none;
+}
+
+@media only screen and (max-width: 1066px) {
+  // The width of the menu cannot smaller than 160px
+  .menu-wrapper {
+    width: 160px;
+
+    &-minimized {
+      width: 50px;
+    }
+  }
+}
+
+// Switch to mobile view
+@media only screen and (max-width: 600px) {
+  .menu-wrapper-mobile-minimized {
+    width: 0;
+    z-index: 2000;
+
+    .menu-title {
+      padding: 0;
+    }
+  }
+
+  .menu-wrapper-mobile {
+    width: 100%;
+    z-index: 2000;
+
+    .menu-title {
+      padding: {
+        left: 8px;
+        right: 8px;
+      };
+    }
+  }
+
+  .title-text-mobile-minimized {
+    display: none;
+  }
+
+  .title-text-mobile {
+    display: block;
+  }
+
+  .menu-page-mobile-minimized {
+    display: none;
+  }
+}

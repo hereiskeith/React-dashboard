@@ -1,0 +1,116 @@
+// Use CSS grid to style dashboard
+.dashboard-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 2fr 1fr 2fr 2fr;
+  grid-template-rows: 30px 1.5fr 300px 300px;
+  grid-template-areas:
+          "dashboardOverview . . . . . . ."
+          "TOPerSecBuy TOPerSecBuy . TOPerSecSell TOPerSecSell . TOPerSecNet TOPerSecNet"
+          "price price price price price price totalTradingVolume totalTradingVolume"
+          "table table table table tradingVolume tradingVolume tradingVolume tradingVolume";
+  min-height: 100vh;
+  grid-gap: 1.5em 2em;
+  padding: 1.5em {
+    left: 3em;
+    right: 3em;
+  }
+  background: #F2F2F9;
+}
+
+.dashboard-overview {
+  grid-area: dashboardOverview;
+  color: #666;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.bitcoin-turnover-per-second-buy {
+  grid-area: TOPerSecBuy;
+  overflow: hidden;
+ }
+
+.bitcoin-turnover-per-second-sell {
+  grid-area: TOPerSecSell;
+  overflow: hidden;
+}
+
+.bitcoin-turnover-per-second-net {
+  grid-area: TOPerSecNet;
+  overflow: hidden;
+}
+
+.bitcoin-price {
+  grid-area: price;
+  overflow: hidden;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.bitcoin-trading-volume {
+  grid-area: tradingVolume;
+  overflow: hidden;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.bitcoin-referer-table {
+  grid-area: table;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.bitcoin-total-trading-volume {
+  grid-area: totalTradingVolume;
+  overflow: hidden;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+@media only screen and (max-width: 992px) {
+  .dashboard-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 30px 1.2fr 300px 300px 300px;
+    grid-template-areas:
+            "dashboardOverview . ."
+            "TOPerSecBuy TOPerSecSell TOPerSecNet"
+            "price price totalTradingVolume"
+            "tradingVolume tradingVolume tradingVolume"
+            "table table table"
+    }
+}
+
+@media only screen and (max-width: 850px) {
+  .dashboard-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 1.2fr 1.2fr 1.2fr 300px 300px 300px 300px;
+    grid-template-areas:
+            "dashboardOverview"
+            "TOPerSecBuy"
+            "TOPerSecSell"
+            "TOPerSecNet"
+            "price"
+            "totalTradingVolume"
+            "tradingVolume"
+            "table"
+  }
+}
+
+// Switch to mobile view
+@media only screen and (max-width: 600px) {
+  .dashboard-wrapper {
+    grid-template-rows: 80px 1.2fr 1.2fr 1.2fr 300px 300px 300px 300px;
+    padding: 1.5em {
+      top: 0;
+    };
+  }
+
+  .dashboard-overview {
+    align-self: center;
+    color: #666;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+  }
+}
