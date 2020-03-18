@@ -1,5 +1,16 @@
 # 2019 Q4 Frontend Entry Submission
 
+## Keith's Summary
+
+#### Login and Sign Up
+![alt text](src/gif/login-sign-up.gif)
+
+#### Error Message
+![alt text](src/gif/error-message.gif)
+
+
+
+
 ## Summary
 
 This is not an exhaustive examination of your skill-set, rather we are trying to ensure a basic understanding of the subject matter. You are tasked with creating a simple faux dashboard with a sign in, and a single overview page.
