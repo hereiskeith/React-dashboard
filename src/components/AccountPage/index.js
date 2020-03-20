@@ -161,6 +161,12 @@ const AccountPage = props => {
     });
   };
 
+  const backToLogin = () => {
+    setInputState('login');
+    setSubmitState('noSubmit');
+    setForgetPasswordFormValue({ email: '' });
+  };
+
   return (
     <div className='account-wrapper'>
       <div className='account-cover'/>
@@ -296,7 +302,16 @@ const AccountPage = props => {
             onClick={haveAccountAndSwitchBackToLogin}
           >
             <CSSTransition in={inputState === 'signUp'} timeout={500} classNames='flip' unmountOnExit>
-              <p>Already have an account? Sign in.</p>
+              <p>Already have an account? Sign in</p>
+            </CSSTransition>
+          </div>
+
+          <div
+            className='typography-wrapper'
+            onClick={backToLogin}
+          >
+            <CSSTransition in={inputState === 'forgetPassword'} timeout={500} classNames='flip' unmountOnExit>
+              <p>Back to Sign in Page</p>
             </CSSTransition>
           </div>
 
