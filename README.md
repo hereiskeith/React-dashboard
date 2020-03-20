@@ -1,6 +1,8 @@
 # About the dashboard
 
-This is a React.js project integrated with Redux, SASS and highcharts. It provide a pixel-perfect match with the mockup design and allow users to simply sign up and login. 
+This is a React.js project integrated with Redux, SASS and highcharts. It provide a pixel-perfect match with the mockup design and allow users to simply sign up and login.
+
+https://react-dashboard-keith.herokuapp.com/
 
 Data for this faux dashboard and the charts is from an open API: https://www.mercadobitcoin.net/api/BTC/trades
 
