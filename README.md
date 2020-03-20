@@ -18,22 +18,22 @@ You should be able to access the app through http://localhost:3000/
 It may take sometime to load the gif files.
 
 ### Login and Sign Up 
-![Login & Sign Up](src/gif/login-sign-up.gif)
+![Login & Sign Up](.../media/login-sign-up.gif?raw=true)
 
 ### Error Message
-![Error Message](src/gif/error-message.gif)
+![Error Message](.../media/error-message.gif?raw=true)
 
 ### Responsive View for Login and Sign Up Pages
-![Responsive Login & Sign Up](src/gif/login-signup-responsive.gif)
+![Responsive Login & Sign Up](.../media/login-signup-responsive.gif?raw=true)
 
 ### Dashboard
-![Dashboard](src/gif/dashboard.gif)
+![Dashboard](.../media/dashboard.gif?raw=true)
 
 ### About Me
-![About Me](src/gif/about-me.gif)
+![About Me](.../media/about-me.gif?raw=true)
 
 ### Responsive View for Dashboard and About Me Pages
-![Responsive Main Pages](src/gif/main-page-responsive.gif)
+![Responsive Main Pages](.../media/main-page-responsive.gif?raw=true)
 
 
 
