@@ -27,7 +27,7 @@ const Checkbox = (props) => {
       // whether it is checked or not
       setErrorBool(name, !checked);
     }
-  }, [checked, name, state, setErrorBool]);
+  }, [checked]);
 
   useEffect(() => {
     // Initialize the error state to true when checkbox is shown
@@ -45,7 +45,7 @@ const Checkbox = (props) => {
         setErrorBool(name, false);
       }
     };
-  }, [state, name, setErrorBool]);
+  }, [state]);
 
   return (
     <CSSTransition

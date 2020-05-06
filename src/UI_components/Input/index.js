@@ -23,7 +23,7 @@ const Input = (props) => {
       // Set the error state of each input based on its value
       setErrorBool(name, !checkIfValid(name, value));
     }
-  }, [name, value, setErrorBool, checkIfValid, state]);
+  }, [value]);
 
   useEffect(() => {
     // Initialize the error state to true when input is shown
@@ -38,7 +38,7 @@ const Input = (props) => {
       // Set the error state to true when input is unmounted
       setErrorBool(name, false);
     };
-  }, [state, name, setErrorBool]);
+  }, [state]);
 
   const checkIfValid = (name, value) => {
     switch (name) {
