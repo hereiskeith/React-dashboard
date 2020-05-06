@@ -1,12 +1,21 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import './style.scss';
-import { CSSTransition } from 'react-transition-group';
-import { actionCreators } from '../../components/AccountPage/store';
-import { connect } from 'react-redux';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import "./style.scss";
+import { CSSTransition } from "react-transition-group";
+import { actionCreators } from "../../components/AccountPage/store";
+import { connect } from "react-redux";
 
-const Checkbox = props => {
-  const { name, state, checked, className, animationState, submitting, label, onChange } = props;
+const Checkbox = (props) => {
+  const {
+    name,
+    state,
+    checked,
+    className,
+    animationState,
+    submitting,
+    label,
+    onChange,
+  } = props;
   // Function from mapDispatch below
   const { setErrorBool } = props;
 
@@ -35,23 +44,38 @@ const Checkbox = props => {
       if (name) {
         setErrorBool(name, false);
       }
-    }
+    };
   }, [state]);
 
   return (
-    <CSSTransition in={state} timeout={500} classNames='flip-checkbox' unmountOnExit>
+    <CSSTransition
+      in={state}
+      timeout={500}
+      classNames="flip-checkbox"
+      unmountOnExit
+    >
       <label
         // When the form is submitting, the checkbox is unchecked and the animation state is set to true,
         // add the class 'c-checkbox-error.
-        className={'c-checkbox ' + (submitting && !checked && animationState?'c-checkbox-error ':'')
-        + className}
+        className={
+          "c-checkbox " +
+          (submitting && !checked && animationState
+            ? "c-checkbox-error "
+            : "") +
+          className
+        }
       >
         {label}
-        <input type='checkbox' checked={checked} onChange={onChange} name={name}/>
-        <span className='c-checkbox-checkmark'/>
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={onChange}
+          name={name}
+        />
+        <span className="c-checkbox-checkmark" />
       </label>
     </CSSTransition>
-  )
+  );
 };
 
 Checkbox.propTypes = {
@@ -62,30 +86,29 @@ Checkbox.propTypes = {
   animationState: PropTypes.bool,
   submitting: PropTypes.bool,
   label: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 Checkbox.defaultProps = {
-  name: '',
+  name: "",
   state: false,
   checked: false,
-  className: '',
+  className: "",
   animationState: false,
   submitting: false,
-  label: '',
-  onChange: function () {
-  }
+  label: "",
+  onChange: function () {},
 };
 
 // Map state from store to component's properties
-const mapState = state => ({
-  error: state.getIn(['account', 'error']),
+const mapState = (state) => ({
+  error: state.getIn(["account", "error"]),
 });
 
-const mapDispatch = dispatch => ({
+const mapDispatch = (dispatch) => ({
   setErrorBool(name, errorBool) {
     // To record the error state in redux store
-    dispatch(actionCreators.setErrorBool(name, errorBool))
-  }
+    dispatch(actionCreators.setErrorBool(name, errorBool));
+  },
 });
 
 export default connect(mapState, mapDispatch)(Checkbox);

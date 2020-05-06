@@ -1,10 +1,10 @@
-import * as bitcoinData from './trade';
+import * as bitcoinData from "./trade";
 
 const windowHeight = window.screen.availHeight;
 
 export const bitcoinTurnoverPerSecondWithSell = {
   chart: {
-    type: 'column',
+    type: "column",
     width: 100,
     height: windowHeight * 0.12,
     scrollablePlotArea: {
@@ -14,48 +14,50 @@ export const bitcoinTurnoverPerSecondWithSell = {
     },
   },
   time: {
-    timezoneOffset: 5 * 60
+    timezoneOffset: 5 * 60,
   },
   title: {
-    text: '',
-    align: 'left',
+    text: "",
+    align: "left",
     margin: 10,
   },
   xAxis: {
     visible: false,
-    type: 'datetime',
-    padding: 0.02
+    type: "datetime",
+    padding: 0.02,
   },
   yAxis: {
     visible: false,
     title: {
-      text:''
+      text: "",
     },
-    type: 'linear',
+    type: "linear",
     tickInterval: 1,
     min: 0,
-    gridLineColor: '#FFEFEF'
+    gridLineColor: "#FFEFEF",
   },
   legend: {
     enabled: false,
   },
   plotOptions: {
     series: {
-      pointPlacement:'between',
+      pointPlacement: "between",
       // maxPointWidth: 20,
       groupPadding: 0,
       pointPadding: 0,
-      borderWidth: 0
+      borderWidth: 0,
     },
     line: {
       dataLabels: {
-        enabled: true
-      }
-    }
+        enabled: true,
+      },
+    },
   },
-  series: [{
-    name: 'Buy',
-    color: '#7FE2FF',
-    data: bitcoinData.bitcoinTurnoverPerSecondWithTypeSell
-  }]
+  series: [
+    {
+      name: "Buy",
+      color: "#7FE2FF",
+      data: bitcoinData.bitcoinTurnoverPerSecondWithTypeSell,
+    },
+  ],
 };

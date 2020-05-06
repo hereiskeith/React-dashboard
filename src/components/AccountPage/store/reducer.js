@@ -1,5 +1,5 @@
-import { fromJS } from 'immutable';
-import { actionConstants } from './index'
+import { fromJS } from "immutable";
+import { actionConstants } from "./index";
 
 const defaultState = fromJS({
   error: {
@@ -10,16 +10,16 @@ const defaultState = fromJS({
     password: undefined,
     confirmpassword: undefined,
     remerberme: undefined,
-    agreeterms: undefined
-    }
+    agreeterms: undefined,
+  },
 });
 
 const reducer = (state = defaultState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case actionConstants.PROCEED_SIGN_UP:
-      return state.set('user', action.data);
+      return state.set("user", action.data);
     case actionConstants.SET_ERROR_BOOL:
-      return state.setIn(['error', action.name], action.data);
+      return state.setIn(["error", action.name], action.data);
     default:
       return state;
   }

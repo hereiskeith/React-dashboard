@@ -34,7 +34,6 @@
   }
 }
 
-
 .typography-wrapper {
   position: relative;
   width: 100%;
@@ -82,7 +81,8 @@
   color: red;
 }
 
-.button-wrapper, .checkbox-wrapper {
+.button-wrapper,
+.checkbox-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -191,11 +191,11 @@
     background: rgba(256, 256, 256, 0.8);
 
     .input-wrapper {
-      width: 60%
+      width: 60%;
     }
 
     .checkbox-wrapper {
-      width: 60%
+      width: 60%;
     }
 
     .button-wrapper {
@@ -250,7 +250,7 @@
 // Adjust the button location and the direction it flows
 @media only screen and (max-width: 400px) {
   .mobile-wrapper .checkbox-wrapper {
-    width: 70%
+    width: 70%;
   }
   .button-wrapper {
     flex-direction: column;

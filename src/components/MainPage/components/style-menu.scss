@@ -8,7 +8,7 @@
   justify-content: flex-start;
   min-height: 100vh;
   width: 15vw;
-  background: #43425D;
+  background: #43425d;
   transition: all 0.2s ease;
   // Minimized menu in laptop view
   &-minimized {
@@ -36,9 +36,9 @@
   padding: {
     left: 8px;
     right: 8px;
-  };
+  }
   color: white;
-  background: #3C3B53;
+  background: #3c3b53;
 
   h4 {
     flex-grow: 1;
@@ -62,29 +62,29 @@
   height: 50px;
   padding: {
     right: 8px;
-  };
-  color: #9998B3;
-  background: #43425D;
+  }
+  color: #9998b3;
+  background: #43425d;
   cursor: default;
 
   &-focus {
-    background: #3C3B54;
+    background: #3c3b54;
   }
 
   h5 {
     flex-grow: 1;
-    color: #9998B3;
+    color: #9998b3;
     font-weight: 700;
     white-space: nowrap;
   }
 
   .menu-thick-line {
-    width:3px;
+    width: 3px;
     height: 50px;
     background: transparent;
 
     &-focus {
-      background: #A3A0FB;
+      background: #a3a0fb;
     }
   }
 
@@ -127,7 +127,7 @@
       padding: {
         left: 8px;
         right: 8px;
-      };
+      }
     }
   }
 

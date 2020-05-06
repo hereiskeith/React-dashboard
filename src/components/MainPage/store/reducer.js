@@ -1,17 +1,17 @@
-import { fromJS } from 'immutable';
-import { actionConstants } from './index'
+import { fromJS } from "immutable";
+import { actionConstants } from "./index";
 
 const defaultState = fromJS({
-  focus: 'Dashboard',
+  focus: "Dashboard",
   minimized: false,
 });
 
 const reducer = (state = defaultState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case actionConstants.SET_FOCUS:
-      return state.set('focus', action.data);
+      return state.set("focus", action.data);
     case actionConstants.SET_MINIMIZED:
-      return state.set('minimized', action.data);
+      return state.set("minimized", action.data);
     default:
       return state;
   }

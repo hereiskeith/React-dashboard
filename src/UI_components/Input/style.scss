@@ -21,7 +21,7 @@ $inputPadding: 0.375em;
   margin-top: 1.5em;
   padding: $inputPadding {
     left: 0.25em;
-  };
+  }
   font-size: $inputFontSize;
 
   &:focus {
@@ -45,7 +45,7 @@ $inputPadding: 0.375em;
   // When symbol is hovered, show error text
   span:hover {
     cursor: pointer;
-    &+div.c-error-text {
+    & + div.c-error-text {
       display: block;
     }
   }
@@ -70,12 +70,24 @@ $inputPadding: 0.375em;
 }
 
 @keyframes vibrateForInputError {
-  0% {transform: translateX(0%);}
-  20% {transform: translateX(-40%);}
-  40% {transform: translateX(40%);}
-  60% {transform: translateX(-40%);}
-  80% {transform: translateX(40%);}
-  100% {transform: translateX(0%);}
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(-40%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  60% {
+    transform: translateX(-40%);
+  }
+  80% {
+    transform: translateX(40%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 // For CSSTransition

@@ -3,16 +3,16 @@
   grid-template-columns: 1fr;
   grid-template-rows: 30px 100px auto;
   grid-template-areas:
-          "aboutMeTitle"
-          "."
-          "informationWrapper";
+    "aboutMeTitle"
+    "."
+    "informationWrapper";
   min-height: calc(100vh - 60px);
   grid-gap: 0.5em 2em;
   padding: 1.5em {
     left: 3em;
     right: 3em;
-  };
-  background: #F2F2F9;
+  }
+  background: #f2f2f9;
 }
 
 .about-me-title {
@@ -30,11 +30,11 @@
   grid-template-columns: auto auto;
   grid-template-rows: repeat(5, auto);
   grid-template-areas:
-          "aboutMeName aboutMeNameKeith"
-          "aboutMeEmail aboutMeEmailKeith"
-          "aboutMePhone aboutMePhoneKeith"
-          "aboutMeNote aboutMeNoteKeith"
-          "aboutMeResume aboutMeResumeKeith";
+    "aboutMeName aboutMeNameKeith"
+    "aboutMeEmail aboutMeEmailKeith"
+    "aboutMePhone aboutMePhoneKeith"
+    "aboutMeNote aboutMeNoteKeith"
+    "aboutMeResume aboutMeResumeKeith";
   grid-gap: 1em 2em;
   font-weight: 600;
 }
@@ -54,7 +54,7 @@
 }
 
 @function gridArea($name) {
-  @return aboutMe#{$name}
+  @return aboutMe#{$name};
 }
 
 .about-me-name {
@@ -108,14 +108,13 @@
   text-decoration: underline;
 }
 
-
 // Switch to mobile view
 @media only screen and (max-width: 600px) {
   .about-me-wrapper {
     grid-template-rows: 30px 50px auto;
     padding: 1em {
       top: 3em;
-    };
+    }
   }
 
   .information-wrapper {
